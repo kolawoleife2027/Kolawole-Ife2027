@@ -237,3 +237,10 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
+
+/* Hide scroll-to-top button on mobile */
+@media (max-width: 768px) {
+  #scrollTopBtn {
+    display: none !important;
+  }
+}
