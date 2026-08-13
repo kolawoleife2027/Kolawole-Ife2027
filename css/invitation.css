@@ -4,7 +4,7 @@
 /* Base Container */
 .invitation-container {
   /* background-color: #fcf9e2; */
-  /* background: #521a19; */
+  background: #591b1a;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
@@ -18,7 +18,7 @@
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 10px;
-  color: #591b1a;
+  color: #fff;
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -60,7 +60,7 @@
   line-height: 1.1;
   margin-bottom: 50px;
   /* color: #333; */
-  color: #591b1a;
+  color: #fff;
 }
 
 .detail-block {
@@ -75,13 +75,12 @@
   /* color: #666; */
   margin-bottom: 5px;
   display: block;
-  color: #591b1a;
+  color: #fff;
 }
 
 .detail-value {
-  font-size: 1rem;
-  /* color: #222; */
-  color: #591b1a;
+  font-size: 0.9rem;
+  color: #fff;
 }
 
 /* Right Side: Image */
