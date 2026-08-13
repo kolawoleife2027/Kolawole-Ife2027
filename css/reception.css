@@ -1,0 +1,160 @@
+/* Modern, clean font import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
+.reception-section {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #591b1a;
+  overflow-x: hidden;
+  /* margin-bottom: 150px; */
+}
+
+.reception-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Header Section */
+.reception-header h2 {
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+  /* color: rgb(24, 24, 24); */
+  color: #fff;
+  /* Animation */
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.reception-header p {
+  font-size: 0.9rem;
+  margin-bottom: 60px;
+  /* color: rgb(24, 24, 24); */
+  color: #fff;
+  /* Animation with slight delay */
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Three Column Grid */
+.details-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.detail-item {
+  flex: 1;
+  opacity: 0;
+  /* Staggered animation for the three items */
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.detail-item:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.detail-item:nth-child(2) {
+  animation-delay: 1s;
+}
+.detail-item:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+.detail-item h3 {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  /* color: rgb(24, 24, 24); */
+  color: #fff;
+}
+
+.detail-item p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  /* color: rgb(24, 24, 24); */
+  color: #fff;
+}
+
+/* Bottom Image */
+.reception-image-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0;
+  animation: imageReveal 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1.5s forwards;
+}
+
+.reception-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .details-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .reception-container {
+    padding: 40px 20px;
+  }
+
+  /* Center the image and keep it slightly smaller on mobile */
+  .reception-image-wrap {
+    width: 90%;
+  }
+}

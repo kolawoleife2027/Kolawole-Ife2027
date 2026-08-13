@@ -1,0 +1,104 @@
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* background-color: white; */
+  /* color: black; */
+  overflow-x: hidden; /* Prevents unwanted horizontal scroll during animations */
+}
+
+/* --- Navigation Only --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  animation: fadeInDown 1s ease-out forwards;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background: #f7f5eb;
+  padding-bottom: 20px;
+  /* THIS MAKES IT STAY AT THE TOP */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to stay above images */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: rgb(30, 30, 30);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.nav-links li a:hover {
+  opacity: 0.7;
+}
+
+.rsvp-btn {
+  border: 1px solid rgb(30, 30, 30);
+  padding: 8px 25px;
+  color: rgb(30, 30, 30);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.rsvp-btn:hover {
+  background: rgb(30, 30, 30);
+  color: white;
+}
+
+/* --- Essential Animation --- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Navbar Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+    gap: 1px;
+    margin-bottom: 60px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 60px;
+  }
+}

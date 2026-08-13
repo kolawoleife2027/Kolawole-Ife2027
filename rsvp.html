@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSVP</title>
+    <link rel="stylesheet" href="css/rsvp.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="how-it-started.html">How it Started</a></li>
+        <!-- <li><a href="gallery.html">Gallery</a></li> -->
+      </ul>
+      <a href="rsvp.html" class="rsvp-btn">RSVP</a>
+    </nav>
+
+    <!-- RSVP -->
+    <div class="rsvp-container">
+      <div class="rsvp-card">
+        <div class="rsvp-header">
+          <h2>RSVP</h2>
+          <p>
+            Having loving Family and friends in our lives is the best gift of
+            all. We look forward to celebrating with you kindly RSVP.
+          </p>
+        </div>
+
+        <!-- form -->
+        <form
+          id="modern-rsvp"
+          action="https://formspree.io/f/mreonjvl"
+          method="POST">
+          <div class="input-group">
+            <label for="full-name">Your Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="Full Name"
+              placeholder="Full Name"
+              required />
+          </div>
+
+          <div class="radio-group">
+            <label class="radio-container">
+              <input type="radio" name="Attendance" value="Attending" checked />
+              <span class="checkmark"></span>
+              I am attending
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="Attendance" value="Declined" />
+              <span class="checkmark"></span>
+              I can't attend
+            </label>
+          </div>
+
+          <div class="input-group">
+            <label for="phone">Contact Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="Phone Number"
+              placeholder="🇳🇬 +234 843 123 4067" />
+          </div>
+
+          <div class="input-group">
+            <label for="message">Write a Message</label>
+            <textarea
+              id="message"
+              name="Message"
+              rows="4"
+              placeholder="Your message or song requests..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send RSVP</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- fooster -->
+    <footer class="wedding-footer">
+      <div class="footer-content">
+        <div class="footer-names">Ifeoluwa & Kolawole</div>
+        <div class="footer-divider"></div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="how-it-started.html">Our Story</a>
+          <!-- <a href="gallery.html">Gallery</a> -->
+          <!-- <a href="#">Registry</a> -->
+          <a href="rsvp.html">RSVP</a>
+        </div>
+
+        <div class="footer-hashtag">#IfeKola #HappilyEverAfter2027</div>
+
+        <div class="footer-bottom">
+          <p>Made with love &mdash; &copy; 2026 Ife & Kola</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

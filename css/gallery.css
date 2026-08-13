@@ -1,0 +1,215 @@
+/* 1. Masonry Layout */
+.unsplash-grid {
+  column-count: 3; /* 3 columns on desktop */
+  column-gap: 20px;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.grid-item {
+  display: inline-block; /* Prevents images from breaking across columns */
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative; /* CRITICAL: Allows button positioning */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: zoom-in;
+  display: block;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item img:hover {
+  filter: brightness(80%);
+  transform: scale(1.02);
+}
+
+/* --- Download Button Styles --- */
+.download-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #3bad76; /* Matching your RSVP theme color */
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0; /* Hidden until hover */
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Show button when hovering over the grid item */
+.grid-item:hover .download-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.download-btn:hover {
+  background-color: #34c21e;
+  transform: scale(1.1);
+}
+
+/* 2. Responsive Adjustments */
+@media (max-width: 900px) {
+  .unsplash-grid {
+    column-count: 2;
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .unsplash-grid {
+    column-count: 1;
+  }
+
+  /* Make button always visible on mobile/touch devices */
+  .download-btn {
+    opacity: 1;
+    transform: translateY(0);
+    width: 35px;
+    height: 35px;
+    background-color: #3bad76;
+  }
+}
+
+/* 3. The Viewer (Modal) Styles */
+.viewer-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.viewer-content {
+  max-width: 90%;
+  max-height: 85%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* fooster */
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&family=Montserrat:wght@300;400&display=swap");
+
+/* Footer Container - Cleaned & Non-Animated */
+.wedding-footer {
+  background-color: #1c1c1c;
+  padding: 80px 0 40px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Elegant Names */
+.footer-names {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Decorative line */
+.footer-divider {
+  width: 50px;
+  height: 1px;
+  background-color: #d4af37;
+  margin: 20px auto;
+}
+
+/* Navigation Links */
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d4af37;
+}
+
+/* Hashtag Section */
+.footer-hashtag {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+/* Bottom Credits */
+.footer-bottom {
+  font-size: 0.7rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-names {
+    font-size: 1.6rem;
+  }
+}

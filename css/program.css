@@ -1,0 +1,186 @@
+/* Fonts styling matches your invitation configuration */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400&display=swap");
+
+.schedule-container {
+  background: #591b1a; /* Matches your dark brown wedding background */
+  margin: 0;
+  padding: 80px 20px;
+  font-family: "Montserrat", sans-serif; /* Matches invitation base font */
+  /*color: #ebd1a7; Warm gold/cream text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+.schedule-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the columns on the page cross-axis */
+  text-align: center; /* Globally centers text alignment */
+  width: 100%;
+  max-width: 1200px;
+  gap: 100px;
+}
+
+.schedule-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures inner elements of each column are centered */
+  width: 100%;
+}
+
+.schedule-title {
+  /*font-family: "Cormorant Garamond", serif;  Matches invitation h1 font */
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin: 0 0 50px 0;
+  text-transform: uppercase;
+  /* color: #ebd1a7; */
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+/* --- Left Column: Program Timeline Styling --- */
+.timeline-col {
+  animation: scheduleFadeLeft 1.5s ease-out forwards;
+}
+
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Gives the centered timeline a clean, readable boundary */
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: center; /* Centers the time and event horizontally */
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px dotted #fff; /* Dotted dividers matching the screenshot */
+
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.timeline-row:first-child {
+  border-top: 1px dotted #fff;
+}
+
+.timeline-time {
+  width: auto; /* Changed from fixed width to allow natural centered layout */
+  margin-right: 20px; /* Creates spacing between time and event while centered */
+  flex-shrink: 0;
+  font-weight: 400;
+}
+
+.timeline-event {
+  opacity: 0.9;
+}
+
+/* --- Right Column: Details Styling --- */
+.details-col {
+  animation: scheduleFadeRight 1.5s ease-out forwards;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 100%;
+  max-width: 600px; /* Constrains details block to match the timeline width */
+}
+
+.details-block {
+  animation: scheduleFadeUp 1.8s ease-out forwards;
+}
+
+.details-heading {
+  font-family: "Cormorant Garamond", serif; /* Matches invitation heading font */
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  color: #ebd1a7;
+  text-align: center;
+}
+
+.details-text {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  margin: 0;
+  opacity: 0.8;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* --- Animations --- */
+@keyframes scheduleFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scheduleFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scheduleFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Layout for Tablets/Mobile --- */
+@media (max-width: 900px) {
+  .schedule-container {
+    padding: 60px 20px;
+  }
+
+  .schedule-section {
+    gap: 60px;
+  }
+
+  .schedule-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Swaps layout animations for a clean vertical mobile scroll */
+  .timeline-col,
+  .details-col {
+    animation: scheduleFadeUp 1.5s ease-out forwards;
+  }
+
+  .timeline-row {
+    padding: 20px 0;
+  }
+
+  .timeline-time {
+    width: auto;
+  }
+}
